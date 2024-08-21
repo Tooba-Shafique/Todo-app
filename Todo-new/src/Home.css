@@ -1,0 +1,71 @@
+/* Home.css */
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+ 
+}
+
+.task {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 2px solid #0b1d79;
+  /* border-radius: 5px; */
+  width: 100%;
+  max-width: 700px;
+  height: 30px;
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.icon {
+  margin-right: 10px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.line_through {
+  text-decoration: line-through;
+  color: #888;
+}
+
+/* Additional styles for better alignment */
+.task > div {
+  display: flex;
+  align-items: center;
+  margin-left: 15px;
+}
+
+.task > div > span {
+  margin-left: auto;
+ 
+}
+
+/* Styles for the edit input and button */
+.task input[type="text"] {
+  margin-right: 10px;
+  padding: 5px;
+  margin-left: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+
+}
+
+.task button {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+}
