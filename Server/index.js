@@ -5,7 +5,12 @@ const TodoModel = require ('./Models/Todo')
 const dotenv=require('dotenv')
 const ConnectDB =require('./utils/db')
 const app=express()
-app.use(cors())
+app.use(cors({
+    origin: 'http://localhost:3000',
+    methods: ['GET', 'PUT', 'POST', 'DELETE'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+    credentials: true
+  }))
 app.use(express.json())
 dotenv.config()
 
