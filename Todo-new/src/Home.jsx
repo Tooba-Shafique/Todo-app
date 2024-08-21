@@ -3,6 +3,7 @@ import axios from "axios";
 import { BsFillCheckCircleFill, BsCircleFill, BsFillTrashFill, BsPencilFill } from 'react-icons/bs';
 import Create from "./Create";
 import "./Home.css";
+import apiService from "./Utils/axios-services";
 // import './Create.css';
 function Home() {
     const [todos, setTodos] = useState([]);
@@ -10,7 +11,7 @@ function Home() {
     const [newTask, setNewTask] = useState('');
 
     useEffect(() => {
-        axios.get('http://localhost:3001/get')
+        apiService.get('/get')
             .then(result => setTodos(result.data))
             .catch(err => console.log(err));
     }, []);
@@ -21,7 +22,7 @@ function Home() {
 
     const handleUpdate = (id) => {
         console.log("The id is :", id);
-        axios.put(`http://localhost:3001/update/${id}`, { task: newTask })
+        apiService.put(`/update/${id}`, { task: newTask })
 
             .then(result => {
                 setTodos(todos.map(todo => todo._id === id ? { ...todo, task: newTask } : todo));
@@ -35,7 +36,7 @@ function Home() {
     const handleDelete = (id) => {
         console.log("The id is ", id)
         console.log("the todos:", todos)
-        axios.delete(`http://localhost:3001/delete/${id}`)
+        apiService.delete(`/delete/${id}`)
 
             .then(result => {
                 setTodos(todos.filter(todo => todo._id !== id));

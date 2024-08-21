@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from 'axios';
 import "./Create.css"; // Import the CSS file
-
+import apiService from "./Utils/axios-services";
 function Create({ onAdd }) {
     const [task, setTask] = useState('');
     const [error, setError] = useState('');
@@ -12,7 +12,7 @@ function Create({ onAdd }) {
             return;
         }
 
-        axios.post('http://localhost:3001/add', { task: task })
+        apiService.post('/add', { task: task })
             .then(result => {
                 setTask(''); // Clear the input field
                 setError(''); // Clear any error message
