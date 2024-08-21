@@ -6,7 +6,7 @@ const dotenv=require('dotenv')
 const ConnectDB =require('./utils/db')
 const app=express()
 app.use(cors({
-    origin: 'http://localhost:5173',
+    origin: 'todo-app-8b1iie775-tooba-shafiques-projects.vercel.app',//'http://localhost:5173',
     methods: ['GET', 'PUT', 'POST', 'DELETE'],
     allowedHeaders: ['Content-Type', 'Authorization'],
     credentials: true
